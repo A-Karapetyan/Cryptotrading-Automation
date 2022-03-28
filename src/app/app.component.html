@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="routing-content">
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
+
+<app-login *ngIf="isOpenLoginState"></app-login>
+<app-register *ngIf="isOpenSignUpState"></app-register>

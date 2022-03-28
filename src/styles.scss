@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box ;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// general
+
+.btn {
+    padding: 7px  14px !important;
+    margin: 0 !important;
+}
+
+.primary-btn {
+
+}
+
+.green-btn {
+    background-color: #3CEFE4 !important;
+    color: #fff !important;
+}
