@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CarouselComponent } from './carousel/carousel.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductCardComponent } from './product-card/product-card.component';
+import { ItemCryptoComponent } from './item-crypto/item-crypto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     CarouselComponent,
-    ProductCardComponent
+    ItemCryptoComponent
   ],
   imports: [
     CommonModule,
@@ -22,8 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MDBBootstrapModule,
     CarouselComponent,
     HttpClientModule,
-    ProductCardComponent,
+    ItemCryptoComponent,
     ReactiveFormsModule,
   ],
-})
+}) 
 export class GeneralModule { }

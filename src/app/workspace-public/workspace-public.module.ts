@@ -5,13 +5,11 @@ import { WorkspacePublicRoutingModule } from './workspace-public-routing.module'
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from '@platform/components/home/home.component';
 import { GeneralModule } from '@app/global/general/general.module';
-import { ProductsComponent } from '@platform/components/products/products.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     HomeComponent,
-    ProductsComponent,
   ],
   imports: [
     CommonModule,
