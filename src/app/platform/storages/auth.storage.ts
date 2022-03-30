@@ -18,7 +18,7 @@ export class AuthStorage {
     return localStorage.getItem(this.storageTokenKey);
   }
 
-  private removeTokenStorage(): void {
+  public removeTokenStorage(): void {
     localStorage.removeItem(this.storageTokenKey);
   }
 

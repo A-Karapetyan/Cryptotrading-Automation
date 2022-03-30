@@ -1,3 +1,45 @@
-.card {
-    width: 190px;
+.P-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.P-crypto_item {
+    flex: 0 0 150px;
+    height: 150px;
+    background-color: #3B424E;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
+
+    .P-crypto_img {
+        padding: 17px 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        overflow: hidden;
+
+        img {
+            max-height: 40px;
+        }
+    }
+
+    h6 {
+        padding: 30px 10px 10px;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.24px;
+        color: #fff;
+        text-align: center;
+    }
+
+    &.active {
+        border-color: #44A589;
+
+        .P-crypto_img {
+            border-color: #44A589;
+        }
+    }
 }
