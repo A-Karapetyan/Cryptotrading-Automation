@@ -1,8 +1,11 @@
-<div class="P-list">
-    <div class="P-crypto_item">
+<a class="P-container" [routerLink]="'/details'">
+    <div class="P-crypto_item" [class.active]="isActive" (mouseenter)="isActive = true" (mouseleave)="isActive = false">
         <div class="P-crypto_img d-flex justify-content-center align-items-center">
-            <img src="https://bitcoin.org/img/icons/opengraph.png?1648318071">
+            <img [src]="image">
         </div>
-        <h6>{{ 'BTC' }}</h6>
+       
+        <h6>{{ title }}</h6>
+        <h5>{{ price.toLocaleString()  + ' $'}}</h5>
+      
     </div>
-</div>
+</a>

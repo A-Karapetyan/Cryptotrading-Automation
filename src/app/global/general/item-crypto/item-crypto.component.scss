@@ -1,8 +1,6 @@
-.P-list {
+.P-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px;
+    margin: 0 20px 20px 0;
 }
 
 .P-crypto_item {
@@ -10,7 +8,6 @@
     height: 150px;
     background-color: #3B424E;
     border-radius: 5px;
-    border: 1px solid transparent;
     overflow: hidden;
     cursor: pointer;
 
@@ -18,7 +15,6 @@
         padding: 17px 10px;
         background-color: #fff;
         border-radius: 5px;
-        border: 1px solid transparent;
         overflow: hidden;
 
         img {
@@ -26,17 +22,22 @@
         }
     }
 
-    h6 {
-        padding: 30px 10px 10px;
+    h6, h5 {
         font-size: 16px;
-        line-height: 20px;
         letter-spacing: 0.24px;
+        margin: 0;
         color: #fff;
         text-align: center;
+        margin: 10px 0;
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: bold;
     }
 
     &.active {
-        border-color: #44A589;
+        border: #44A589 1px solid;
 
         .P-crypto_img {
             border-color: #44A589;

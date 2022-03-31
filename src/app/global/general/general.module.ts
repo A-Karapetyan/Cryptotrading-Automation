@@ -5,18 +5,22 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ItemCryptoComponent } from './item-crypto/item-crypto.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 
 @NgModule({
   declarations: [
     CarouselComponent,
-    ItemCryptoComponent
+    ItemCryptoComponent,
+    LineChartComponent
   ],
   imports: [
     CommonModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     MDBBootstrapModule,
@@ -24,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ItemCryptoComponent,
     ReactiveFormsModule,
+    LineChartComponent
   ],
 }) 
 export class GeneralModule { }
