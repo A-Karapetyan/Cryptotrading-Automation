@@ -1,24 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from '@platform/services/auth.service';
 import { AuthStorage } from '@platform/storages/auth.storage';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(
-    public authStorage: AuthStorage,
-    private authService: AuthService,
-    
-    ) { }
+    currentRoute: String = '';
 
-  ngOnInit(): void {
-  }
+    constructor(
+        public authStorage: AuthStorage,
+        private authService: AuthService,
+        public router: Router,
 
-  openLoginModal() {
-    this.authService.openSignInModal();
-  }
+    ) {
+        router.events.pipe(event => event)
+            .subscribe((event: NavigationEnd) => {
+                if (event instanceof NavigationEnd) {
+                    this.currentRoute = event.url;
+                }
+
+            });
+    }
+    ngOnInit(): void {
+    }
+
+    openLoginModal() {
+        this.authService.openSignInModal();
+    }
 }

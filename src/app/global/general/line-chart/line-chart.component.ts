@@ -16,7 +16,7 @@ export class LineChartComponent {
 
   chartColors = [
     {
-      backgroundColor: 'rgb(69 40 77 / 20%)',
+      backgroundColor: 'rgb(247 147 26 / 13%)',
       borderColor: 'rgba(200, 99, 132, .7)',
       borderWidth: 2,
     },
