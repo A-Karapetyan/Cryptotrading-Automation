@@ -1,0 +1,50 @@
+// #region Colors
+$black               : #1D1D1D;
+$white               : #ffffff;
+$gray-dark           : #707070;
+$gray                : #A2A3AD;
+$light               : #F3F4F5;
+$light-gray          : #B4B4B4;
+$green               : #44A589;
+$light-green         : #2C9D4A;
+$red                 : #D9044C;
+$blue                : #333943;
+$el-blue             : #4FDDD9;
+$dark-blue           : #262C36;
+$light-red           : #F60065;
+$yellow              : #e7ad00;
+$light-yellow        : #fbc43a;
+$orange              : #F47421;
+$purple              : #EE00FF;
+// #endregion
+
+// #region Alternative styles
+
+$shadow              : 0 0 10px rgba(0, 0, 0, .1);
+$shadow-dark         : 0 0 10px rgba(0, 0, 0, .2);
+$error-shadow        : 0 0 15px transparentize($red, 0.6);
+$blue-shadow         : 0 0 40px rgba($blue, .2);
+$blue-dark-shadow    : 0 0 40px rgba($blue, .4);
+$radius              : 3px;
+$btn-radius          : 20px;
+
+$laptop-size         : 1024px;
+$new_laptop_size     : 980px;
+$tab-size            : 768px;
+$phone-size          : 520px;
+
+// #endregion
+
+// #region App Components styles
+$body-color          : $blue;
+$main-color          : $green;
+
+$modal-z             : 1000;
+$right-side-z        : $modal-z + 1;
+$header-z            : 500;
+
+$input-height        : 50px;
+$input-border-radius : 13px;
+
+$header-height       : 115px;
+// #endregion

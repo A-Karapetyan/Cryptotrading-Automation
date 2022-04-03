@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-    price: Number = 100000;
-    title: String = 'BTC';
-    image: String = 'https://bitcoin.org/img/icons/opengraph.png?1648318071';
+    price: number = 100000;
+    title: string = 'BTC';
+    image: string = 'https://bitcoin.org/img/icons/opengraph.png?1648318071';
 
     constructor() { }
 

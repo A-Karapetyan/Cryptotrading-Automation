@@ -7,13 +7,17 @@ import { ItemCryptoComponent } from './item-crypto/item-crypto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { ClickOutsideDirective } from '../directives/click-outside.directive';
 
 
 @NgModule({
   declarations: [
     CarouselComponent,
     ItemCryptoComponent,
-    LineChartComponent
+    LineChartComponent,
+    DropdownComponent,
+    ClickOutsideDirective
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     HttpClientModule,
     ItemCryptoComponent,
     ReactiveFormsModule,
-    LineChartComponent
+    LineChartComponent,
+    DropdownComponent,
+    ClickOutsideDirective
   ],
 }) 
 export class GeneralModule { }

@@ -1,0 +1,169 @@
+@import "variables";
+
+:host {
+  width : 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.P-dropdown-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    margin: 0;
+}
+
+.P-select-box {
+  width         : 200px;
+  height        : $input-height;
+  border-radius : $input-border-radius;
+  position      : relative;
+
+  &.disabled {
+
+    .P-select {
+      cursor : initial;
+    }
+  }
+
+  .P-select {
+    width            : 100%;
+    height           : 100%;
+    position         : relative;
+    border-radius    : $input-border-radius;
+    cursor           : pointer;
+    background-color : $dark-blue;
+    border           : 1px solid $light-gray;
+
+    p {
+      user-select : none;
+    }
+
+    .P-select-title {
+      padding-left  : 10px;
+      padding-right : 20px;
+      position      : relative;
+      top           : 50%;
+      transform     : translateY(-50%);
+      margin-right  : 10px;
+      color         : $light-gray;
+
+      p {
+        white-space   : nowrap;
+        text-overflow : ellipsis;
+        overflow      : hidden;
+        color         : #AFAFB0;
+
+        &.selected {
+          color : $white;
+        }
+      }
+    }
+
+    .P-select-title-icon {
+      width     : 10px;
+      height    : 10px;
+      position  : absolute;
+      top       : 50%;
+      right     : 10px;
+      transform : translateY(-50%);
+      font-size : 10px;
+      color     : $light-gray;
+    }
+  }
+
+  .P-row-block {
+    display: flex;
+
+    img {
+        object-fit  : contain;
+        margin: 0 10px;
+    }
+  }
+
+  .P-select-options {
+    width            : calc(100% + 1px);
+    min-height       : 50px;
+    max-height       : 180px;
+    padding          : 5px 0;
+    border           : 1px solid $light-gray;
+    border-radius    : $input-border-radius;
+    display          : none;
+    overflow-x       : hidden;
+    overflow-y       : auto;
+    position         : absolute;
+    z-index          : 5;
+    background-color : $dark-blue;
+
+    &.show {
+      display : block;
+    }
+
+    .P-select-option {
+      width         : 100%;
+      height        : 40px;
+      padding       : 8px 4px;
+      color         : $white; 
+      cursor        : pointer;
+
+      i {
+        font-size : 18px;
+        opacity   : 0;
+      }
+
+      &:hover, &.P-active {
+        background-color : $blue;
+
+        i {
+          opacity : 1;
+        }
+      }
+
+      &.P-disabled-row {
+        cursor           : initial;
+        background-color : transparent;
+
+        p {
+          color : $light-gray;
+        }
+      }
+    }
+  }
+}
+
+*::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+*::-webkit-scrollbar-track {
+    visibility: hidden;
+}
+
+*::-webkit-scrollbar-thumb {
+    visibility: hidden;
+}
+
+.P-disabled {
+    background-color: #84889047 !important;
+    p {
+        color: #fff !important;
+    }
+}
+
+@media screen and (max-width: $new_laptop_size) {
+
+    .P-select-box {
+        
+        .P-select {
+            background-color: rgba(26, 29, 36, 0.38);
+            border-color: #49485B;
+        }
+    }
+
+}
+
+

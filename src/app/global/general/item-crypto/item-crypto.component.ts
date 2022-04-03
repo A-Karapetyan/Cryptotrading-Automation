@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemCryptoComponent implements OnInit {
 
-    isActive: Boolean = false;
-    price: Number = 100000;
-    title: String = 'BTC';
-    image: String = 'https://bitcoin.org/img/icons/opengraph.png?1648318071';
+    isActive: boolean = false;
+    price: number = 100000;
+    title: string = 'BTC';
+    image: string = 'https://bitcoin.org/img/icons/opengraph.png?1648318071';
 
     constructor() { }
 

@@ -7,6 +7,7 @@ import { HomeComponent } from '@platform/components/home/home.component';
 import { GeneralModule } from '@app/global/general/general.module';
 import { DetailsComponent } from '@platform/components/details/details.component';
 import { MySymptomsComponent } from '@platform/components/my-symptoms/my-symptoms.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MySymptomsComponent } from '@platform/components/my-symptoms/my-symptom
     CommonModule,
     WorkspacePublicRoutingModule,
     GeneralModule,
+    FormsModule
   ]
 })
 export class WorkspacePublicModule { }

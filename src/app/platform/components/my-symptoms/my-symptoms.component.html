@@ -1,1 +1,35 @@
-<p>my-symptoms works!</p>
+<div class="P-container">
+  <div class="P-top-items">
+    <div class="P-email">
+      <h2>Your Email :</h2>
+      <h1>{{email}}</h1>
+    </div>
+
+    <div>
+      <button mdbBtn gradient="peach" mdbWavesEffect>CREATE SYMPTOM</button>
+    </div>
+  </div>
+
+
+  <div class="P-symptom-row" *ngFor="let item of symptomsList">
+    <div class="P-criteria" *ngFor="let criteria of item.criterias">
+      <div *ngIf="!criteria.isEdit" class="P-flex">
+        <div class="P-crypto-block">
+          <img *ngIf="criteria.image" [src]="criteria.image" width="20px">
+          <span class="P-mr-1">{{criteria.name}}</span>
+          <span class="P-mr-1">{{TransactionTypeEnum[criteria.value]}}</span>
+          <span>{{criteria.price}}</span>
+        </div>
+
+      </div>
+      <div *ngIf="criteria.isEdit" class="P-flex">
+        <app-dropdown [list]="criteriasList" [(value)]="rowValue" class="P-mr-2"></app-dropdown>
+        <app-dropdown [list]="operationsList" [(value)]="criteria.value" class="P-mr-2"></app-dropdown>
+        <input [(ngModel)]="criteria.price">
+      </div>
+      <i class="fontello-icon-pencil" (click)="criteria.isEdit = !criteria.isEdit"></i>
+    </div>
+  </div>
+
+
+</div>
