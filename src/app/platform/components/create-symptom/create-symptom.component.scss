@@ -1,0 +1,104 @@
+.P-container {
+    padding: 20px;
+
+    .P-top-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .P-flex {
+        display: flex;
+    }
+
+    span {
+        color: #fff;
+    }
+
+    .P-symptom-row {
+        margin         : 20px 0;
+        background-color: #262C36;
+        padding        : 20px;
+        height         : fit-content;
+        border-radius  : 8px;
+        justify-content: space-between;
+        display        : flex;
+        flex-direction: column;
+        justify-content: center;
+
+        app-dropdown {
+            width: unset;
+            margin-right: 20px;
+        }
+
+        input {
+            width            : 200px;
+            height           : 50px;
+            border-radius    : 13px;
+            background-color : #262C36;
+            border           : 1px solid #B4B4B4;
+            color            : #B4B4B4;
+        }
+
+        .P-mt-2 {
+            margin-top: 20px;
+        }
+
+        .P-criteria {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .P-mr-2 {
+                margin-right: 20px;
+            }
+        }
+
+    }
+
+    .P-email {
+    
+        display: flex;
+
+        h2 {
+            font-size: 22px;
+            color: #feb66b;
+        }
+
+        h1 {
+            margin-left: 7px;
+            font-size: 22px;
+            color: #fff;
+        }
+    }
+
+}
+
+.P-icon-delete {
+    color    : #feb66b;
+    cursor   : pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+}
+
+.P-icon-plus {
+    color    : #feb66b;
+    cursor   : pointer;
+    border-radius: 50%;
+    border: #feb66b 1px solid;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        font-size: 14px;
+    }
+}

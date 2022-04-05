@@ -1,1 +1,33 @@
-<p>create-symptom works!</p>
+<div class="P-container">
+  <div class="P-top-items">
+    <div class="P-email">
+      <h2>Your Email :</h2>
+      <h1>{{email}}</h1>
+    </div>
+
+    <div>
+      <button mdbBtn gradient="sunny-morning" mdbWavesEffect routerLink="/create-symptom">SAVE</button>
+    </div>
+  </div>
+
+  <div class="P-symptom-row" >
+      <div class="P-criteria" *ngFor="let item of criterias; let index = index">
+        <div class="P-flex">
+            <app-dropdown [list]="cryptosList" class="P-mr-2"></app-dropdown>
+            <app-dropdown [list]="operationsList" class="P-mr-2"></app-dropdown>
+            <input>
+          </div>
+      
+          <div class="P-flex">
+            <i *ngIf="criterias.length > 1" (click)="deleteCriteria(index)" class="P-icon-delete icon-ic_delete"></i>
+
+            <div class="P-icon-plus" (click)="addCriteriaRow(index)">
+              <i class="fontello-icon-plus"></i>
+            </div>
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
