@@ -9,6 +9,7 @@ import { DetailsComponent } from '@platform/components/details/details.component
 import { MySymptomsComponent } from '@platform/components/my-symptoms/my-symptoms.component';
 import { FormsModule } from '@angular/forms';
 import { CreateSymptomComponent } from '@platform/components/create-symptom/create-symptom.component';
+import { CryptoService } from '@platform/services/crypto.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CreateSymptomComponent } from '@platform/components/create-symptom/crea
     WorkspacePublicRoutingModule,
     GeneralModule,
     FormsModule
-  ]
+  ],
+  providers: [CryptoService]
 })
 export class WorkspacePublicModule { }

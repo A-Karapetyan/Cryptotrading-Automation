@@ -19,7 +19,7 @@ export class MySymptomsComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        this.symptomsList.push({criterias: this.criteriasList});
+        this.symptomsList.push({criterias: this.criteriasList, name: 'Name'});
         
     }
 

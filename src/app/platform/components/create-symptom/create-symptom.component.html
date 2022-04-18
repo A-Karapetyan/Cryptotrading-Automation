@@ -11,11 +11,15 @@
   </div>
 
   <div class="P-symptom-row" >
+      <div class="P-flex P-symptom-name">
+        <input placeholder="Title">
+      </div>
       <div class="P-criteria" *ngFor="let item of criterias; let index = index">
+
         <div class="P-flex">
-            <app-dropdown [list]="cryptosList" class="P-mr-2"></app-dropdown>
-            <app-dropdown [list]="operationsList" class="P-mr-2"></app-dropdown>
-            <input>
+            <app-dropdown [list]="cryptosList" placeholder="Crypto" class="P-mr-2"></app-dropdown>
+            <app-dropdown [list]="operationsList" placeholder="Operation" class="P-mr-2"></app-dropdown>
+            <input placeholder="Value">
           </div>
       
           <div class="P-flex">

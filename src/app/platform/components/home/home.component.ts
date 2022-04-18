@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { CryptoService } from '@platform/services/crypto.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    public data = [];
+    private cryptoService: CryptoService;
 
-  constructor() { }
+    constructor(cryptoService: CryptoService) {
+        this.cryptoService = cryptoService;
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        // this.cryptoService.getCryptos().subscribe(el => {
+        //     console.log(el);
+            
+        // });
+    }
 
 }
