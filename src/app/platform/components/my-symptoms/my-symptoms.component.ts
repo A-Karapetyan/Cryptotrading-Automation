@@ -23,4 +23,8 @@ export class MySymptomsComponent implements OnInit {
         
     }
 
+    deleteSymptom(index: number) {
+
+    }
+
 }

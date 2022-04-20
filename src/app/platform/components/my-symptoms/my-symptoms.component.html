@@ -11,9 +11,10 @@
   </div>
 
 
-  <div class="P-symptom-row" *ngFor="let item of symptomsList">
+  <div class="P-symptom-row" *ngFor="let item of symptomsList; let index = index">
     <div class="P-symptom-name">
         <span>{{item.name}}</span>
+        <i (click)="deleteSymptom(index)" class="P-icon-delete fontello-icon-cancel"></i>
     </div>
     <div class="P-criteria" *ngFor="let criteria of item.criterias">
       <div *ngIf="!criteria.isEdit" class="P-flex">
@@ -28,9 +29,11 @@
       <div *ngIf="criteria.isEdit" class="P-flex">
         <app-dropdown [list]="criteriasList" [(value)]="rowValue" placeholder="Crypto" class="P-mr-2"></app-dropdown>
         <app-dropdown [list]="operationsList" [(value)]="criteria.value" placeholder="Operation" class="P-mr-2"></app-dropdown>
-        <input [(ngModel)]="criteria.price" placeholder="Value">
+        <input [(ngModel)]="criteria.price" placeholder="Amount in USD">
       </div>
-      <i class="fontello-icon-pencil" (click)="criteria.isEdit = !criteria.isEdit"></i>
+      <i *ngIf="!criteria.isEdit" class="fontello-icon-pencil" (click)="criteria.isEdit = true"></i>
+      <i *ngIf="criteria.isEdit" class="fontello-icon-ok" (click)="criteria.isEdit = false"></i>
+
     </div>
   </div>
 

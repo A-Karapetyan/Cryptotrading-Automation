@@ -19,13 +19,13 @@
         <div class="P-flex">
             <app-dropdown [list]="cryptosList" placeholder="Crypto" class="P-mr-2"></app-dropdown>
             <app-dropdown [list]="operationsList" placeholder="Operation" class="P-mr-2"></app-dropdown>
-            <input placeholder="Value">
+            <input placeholder="Amount in USD">
           </div>
       
           <div class="P-flex">
             <i *ngIf="criterias.length > 1" (click)="deleteCriteria(index)" class="P-icon-delete icon-ic_delete"></i>
 
-            <div class="P-icon-plus" (click)="addCriteriaRow(index)">
+            <div class="P-icon-plus" *ngIf="index === 0" (click)="addCriteriaRow(index)">
               <i class="fontello-icon-plus"></i>
             </div>
           </div>

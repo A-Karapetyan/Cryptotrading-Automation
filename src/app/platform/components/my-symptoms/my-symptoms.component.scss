@@ -30,6 +30,8 @@
     }
 
     .P-symptom-name {
+        display: flex;
+        justify-content: space-between;
         padding: 0 0 10px 20px;
 
         span {
@@ -39,6 +41,7 @@
 
     .P-symptom-row {
         margin: 20px 0;
+        position: relative;
         background-color: #262C36;
         padding      : 20px;
         height       : fit-content;
@@ -72,11 +75,12 @@
                 margin-right: 20px;
             }
 
-            .fontello-icon-pencil {
+            .fontello-icon-pencil, .fontello-icon-ok {
                 font-size: 20px;
                 color    : #feb66b;
                 cursor   : pointer;
             }
+
         }
 
     }
@@ -97,4 +101,12 @@
         }
     }
 
+    .P-icon-delete {
+        color    : #ff0000;
+        cursor   : pointer;
+        font-size: 25px;
+        position: absolute;
+        right   : 5px;
+        top     : 5px;
+    }
 }

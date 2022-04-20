@@ -28,7 +28,6 @@ export class CreateSymptomComponent implements OnInit {
     }
 
     deleteCriteria(index: number) {
-        debugger
         this.criterias.splice(index, 1);
     }
 
