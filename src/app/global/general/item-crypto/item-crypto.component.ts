@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CryptoItemModel } from '@app/global/models/crypto-item.model';
 
 @Component({
   selector: 'app-item-crypto',
@@ -7,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemCryptoComponent implements OnInit {
 
-    isActive: boolean = false;
-    price: number = 100000;
-    title: string = 'BTC';
-    image: string = 'https://bitcoin.org/img/icons/opengraph.png?1648318071';
+    @Input() item: CryptoItemModel;
 
     constructor() { }
 

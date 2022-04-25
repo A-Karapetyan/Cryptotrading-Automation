@@ -9,10 +9,10 @@ export class LineChartComponent {
   chartType = 'line';
 
   chartDatasets = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
+    { data: [39402, 39303, 39346, 39354, 39437, 39404, 39467], label: 'BTC' },
   ];
 
-  chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  chartLabels = ['16-04-2022', '17-04-2022', '18-04-2022', '19-04-2022', '20-04-2022', '21-04-2022', '2022-04-2022'];
 
   chartColors = [
     {

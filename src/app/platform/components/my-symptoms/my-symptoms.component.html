@@ -27,7 +27,7 @@
 
       </div>
       <div *ngIf="criteria.isEdit" class="P-flex">
-        <app-dropdown [list]="criteriasList" [(value)]="rowValue" placeholder="Crypto" class="P-mr-2"></app-dropdown>
+        <app-dropdown [list]="criteriasList" [(value)]="rowValue" placeholder="Cryptocurrencyя" class="P-mr-2"></app-dropdown>
         <app-dropdown [list]="operationsList" [(value)]="criteria.value" placeholder="Operation" class="P-mr-2"></app-dropdown>
         <input [(ngModel)]="criteria.price" placeholder="Amount in USD">
       </div>

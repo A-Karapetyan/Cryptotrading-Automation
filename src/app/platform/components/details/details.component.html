@@ -1,8 +1,8 @@
-<div class="P-container">
+<div *ngIf="crypto" class="P-container">
     <div class="P-profile-container">
-      <img [src]="image" width="100px">
-      <h1>{{title}}</h1>
-      <h1>{{price.toLocaleString() + ' $'}}</h1>
+      <img [src]="crypto.image" width="100px">
+      <h1>{{crypto.name}}</h1>
+      <h1>{{crypto.price.toLocaleString() + ' $'}}</h1>
       <div>
         <button mdbBtn gradient="peach" mdbWavesEffect routerLink="/create-symptom">CREATE SYMPTOM</button>
       </div>

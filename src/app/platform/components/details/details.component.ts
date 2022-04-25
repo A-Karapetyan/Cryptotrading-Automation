@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CryptoItemModel } from '@app/global/models/crypto-item.model';
+import { CryptoService } from '@platform/services/crypto.service';
 
 @Component({
     selector: 'app-details',
@@ -6,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
+    crypto: CryptoItemModel;
 
-    price: number = 100000;
-    title: string = 'BTC';
-    image: string = 'https://bitcoin.org/img/icons/opengraph.png?1648318071';
-
-    constructor() { }
+    constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit(): void {
+        this.cryptoService.getById(this.activatedRoute.snapshot.params.id).subscribe(res => {
+            this.crypto = res;
+        })
     }
 
 }

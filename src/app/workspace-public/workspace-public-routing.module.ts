@@ -9,7 +9,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {path: '', component: MainComponent, children: [
     {path: 'home', component: HomeComponent},
-    {path: 'details', component: DetailsComponent},
+    {path: 'details/:id', component: DetailsComponent},
     {path: 'my-symptoms', component: MySymptomsComponent},
     {path: 'create-symptom', component: CreateSymptomComponent},
     {path: '', redirectTo: 'home'},

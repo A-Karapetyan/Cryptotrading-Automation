@@ -15,10 +15,9 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.cryptoService.getCryptos().subscribe(el => {
-        //     console.log(el);
-            
-        // });
+        this.cryptoService.getCryptos().subscribe(data => {
+            this.data = data;
+        });
     }
 
 }

@@ -1,11 +1,10 @@
-<a class="P-container" [routerLink]="'/details'">
-    <div class="P-crypto_item" [class.active]="isActive" (mouseenter)="isActive = true" (mouseleave)="isActive = false">
+<a class="P-container" [routerLink]="'/details/' + item.id">
+    <div class="P-crypto_item" [class.active]="item.isActive" (mouseenter)="item.isActive = true" (mouseleave)="item.isActive = false">
         <div class="P-crypto_img d-flex justify-content-center align-items-center">
-            <img [src]="image">
+            <img [src]="item.image">
         </div>
        
-        <h6>{{ title }}</h6>
-        <h5>{{ price.toLocaleString()  + ' $'}}</h5>
-      
+        <h6>{{ item.name }}</h6>
+        <h5>{{ item.price ? item.price.toLocaleString()  + ' $' : ' '}}</h5>
     </div>
 </a>
