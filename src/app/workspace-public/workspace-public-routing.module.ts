@@ -12,6 +12,7 @@ const routes: Routes = [
     {path: 'details/:id', component: DetailsComponent},
     {path: 'my-symptoms', component: MySymptomsComponent},
     {path: 'create-symptom', component: CreateSymptomComponent},
+    {path: 'create-symptom/:id', component: CreateSymptomComponent},
     {path: '', redirectTo: 'home'},
   ]},
 ];

@@ -1,4 +1,4 @@
-export enum TransactionTypeEnum {
+export enum OperationTypeEnum {
     Grater = 1,
     Lower,
 

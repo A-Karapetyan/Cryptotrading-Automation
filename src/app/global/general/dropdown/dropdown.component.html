@@ -1,5 +1,5 @@
 <div class="P-select-box" [class.disabled]="disable" app-clickOutside (clickOutside)="close()">
-  <div class="P-select" [class.P-disabled]="disable" (click)="toggle()" [class.G-error]="error">
+  <div class="P-select" [class.P-disabled]="disable" (click)="toggle()" [class.P-error]="error">
     <div class="P-select-title">
         <div class="P-row-block">
             <img *ngIf="selectedItem?.image" [src]="selectedItem.image" width="20px">

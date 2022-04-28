@@ -75,12 +75,6 @@
                 margin-right: 20px;
             }
 
-            .fontello-icon-pencil, .fontello-icon-ok {
-                font-size: 20px;
-                color    : #feb66b;
-                cursor   : pointer;
-            }
-
         }
 
     }
@@ -109,4 +103,24 @@
         right   : 5px;
         top     : 5px;
     }
+}
+
+.fontello-icon-pencil, .fontello-icon-ok {
+    font-size: 20px;
+    color    : #feb66b;
+    cursor   : pointer;
+}
+
+.P-error {
+    border-color: #ff005099 !important;
+  
+    &::placeholder {
+      color: #ff005099 !important;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

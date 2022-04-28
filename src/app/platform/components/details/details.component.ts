@@ -16,6 +16,8 @@ export class DetailsComponent implements OnInit {
     ngOnInit(): void {
         this.cryptoService.getById(this.activatedRoute.snapshot.params.id).subscribe(res => {
             this.crypto = res;
+            console.log(this.crypto);
+            
         })
     }
 

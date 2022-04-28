@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TransactionTypeEnum } from '@app/global/enums/operation-type.enum';
+import { OperationTypeEnum } from '@app/global/enums/operation-type.enum';
 import { DropdownModel } from '@app/global/models/select';
 
 @Component({
@@ -14,12 +14,12 @@ export class MySymptomsComponent implements OnInit {
     criteriasList = [{image: 'https://bitcoin.org/img/icons/opengraph.png?1648318071', name: 'BTC', value: 1, price: 10000}, {image: 'https://bitcoin.org/img/icons/opengraph.png?1648318071', name: 'BTC', value: 1, price: 10000}];
     symptomsList = [];
     operationsList = [{name: '>', value: 1}, {name: '<', value: 2}];
-    TransactionTypeEnum = TransactionTypeEnum;
+    OperationTypeEnum = OperationTypeEnum;
 
     constructor() { }
 
     ngOnInit(): void {
-        this.symptomsList.push({criterias: this.criteriasList, name: 'Name'});
+        this.symptomsList.push({criterias: this.criteriasList, name: 'Name', isEditName: false});
         
     }
 

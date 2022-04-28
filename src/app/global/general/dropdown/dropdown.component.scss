@@ -166,4 +166,13 @@ p {
 
 }
 
+.P-error {
+    border-color: #ff005099 !important;
+  
+    .P-row-block {
+        p {
+            color: #ff005099 !important;
+        }
+    }
 
+}

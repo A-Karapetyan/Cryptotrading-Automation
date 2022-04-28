@@ -13,7 +13,13 @@
 
   <div class="P-symptom-row" *ngFor="let item of symptomsList; let index = index">
     <div class="P-symptom-name">
-        <span>{{item.name}}</span>
+        <div>
+            <span *ngIf="!item.isEditName" style="margin-right: 20px;">{{item.name}}</span>
+            <input *ngIf="item.isEditName" [(ngModel)]="item.name" placeholder="Title" style="margin-right: 20px;">
+            <i *ngIf="!item.isEditName" class="fontello-icon-pencil" (click)="item.isEditName = true"></i>
+            <i *ngIf="item.isEditName" class="fontello-icon-ok" (click)="item.isEditName = false"></i>
+        </div>
+    
         <i (click)="deleteSymptom(index)" class="P-icon-delete fontello-icon-cancel"></i>
     </div>
     <div class="P-criteria" *ngFor="let criteria of item.criterias">
@@ -21,7 +27,7 @@
         <div class="P-crypto-block">
           <img *ngIf="criteria.image" [src]="criteria.image" width="20px">
           <span class="P-mr-1">{{criteria.name}}</span>
-          <span class="P-mr-1">{{TransactionTypeEnum[criteria.value]}}</span>
+          <span class="P-mr-1">{{OperationTypeEnum[criteria.value]}}</span>
           <span>{{criteria.price}}</span>
         </div>
 
