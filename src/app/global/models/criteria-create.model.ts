@@ -1,15 +1,17 @@
 import { OperationTypeEnum } from "../enums/operation-type.enum";
 import { Validation } from "../validation";
-import { IsDefined, IsNumber } from "../validation/decorators";
+import { IsDefined, IsNumber, Min } from "../validation/decorators";
 
 export class CriteriaCreateRM extends Validation {
 
     @IsNumber()
     @IsDefined()
     amount: number;
-    @IsDefined()
+
     @IsNumber()
+    @IsDefined()
     cryptoId: number;
+
     @IsDefined()
     operation: OperationTypeEnum;
 

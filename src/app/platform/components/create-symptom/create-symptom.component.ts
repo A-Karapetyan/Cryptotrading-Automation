@@ -57,7 +57,7 @@ export class CreateSymptomComponent implements OnInit {
             return;
         }
         this.symptomSymptom.create(this.symptomCreateRM).subscribe(res => {
-            console.log(res);
+
         })
     }
 }

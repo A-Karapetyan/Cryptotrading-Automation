@@ -16,8 +16,8 @@
       </div>
       <div class="P-criteria" *ngFor="let item of symptomCreateRM.criterias; let index = index">
         <div class="P-flex">
-            <app-dropdown [list]="cryptosList" [error]="item.errors.cryptoid" [(value)]="item.cryptoId" placeholder="Cryptocurrency" class="P-mr-2"></app-dropdown>
-            <app-dropdown [list]="operationsList" [error]="item.errors.operation" [(value)]="item.operation" placeholder="Operation" class="P-mr-2"></app-dropdown>
+            <app-dropdown [list]="cryptosList" [error]="item.errors.cryptoId" [(value)]="item.cryptoId" placeholder="Cryptocurrency" class="P-mr-2"></app-dropdown>
+            <app-dropdown [list]="operationsList" [error]="item.errors.operation" [(value)]="item.operation" placeholder="Operation" class="P-mr-2 P-dropdown"></app-dropdown>
             <input placeholder="Amount in USD" [class.P-error]="item.errors.amount" [(ngModel)]="item.amount" type="number">
           </div>
       

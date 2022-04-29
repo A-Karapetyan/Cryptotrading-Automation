@@ -15,7 +15,7 @@
     <div class="P-symptom-name">
         <div>
             <span *ngIf="!item.isEditName" style="margin-right: 20px;">{{item.name}}</span>
-            <input *ngIf="item.isEditName" [(ngModel)]="item.name" placeholder="Title" style="margin-right: 20px;">
+            <input *ngIf="item.isEditName" [(ngModel)]="item.name" placeholder="Title" style="margin-right: 20px; font-size: 18px;">
             <i *ngIf="!item.isEditName" class="fontello-icon-pencil" (click)="item.isEditName = true"></i>
             <i *ngIf="item.isEditName" class="fontello-icon-ok" (click)="item.isEditName = false"></i>
         </div>
@@ -33,8 +33,8 @@
 
       </div>
       <div *ngIf="criteria.isEdit" class="P-flex">
-        <app-dropdown [list]="criteriasList" [(value)]="rowValue" placeholder="Cryptocurrencyя" class="P-mr-2"></app-dropdown>
-        <app-dropdown [list]="operationsList" [(value)]="criteria.value" placeholder="Operation" class="P-mr-2"></app-dropdown>
+        <app-dropdown [list]="criteriasList" [(value)]="rowValue" placeholder="Cryptocurrency" class="P-mr-2 P-ml-2 P-dropdown"></app-dropdown>
+        <app-dropdown [list]="operationsList" [(value)]="criteria.value" placeholder="Operation" class="P-mr-2 P-dropdown"></app-dropdown>
         <input [(ngModel)]="criteria.price" placeholder="Amount in USD">
       </div>
       <i *ngIf="!criteria.isEdit" class="fontello-icon-pencil" (click)="criteria.isEdit = true"></i>

@@ -18,7 +18,7 @@ export class SymptomCrateRM extends Validation {
         let valid = super.validate();
 
         this.criterias.forEach(cr => {
-           if (!cr.validate()) {
+            if (!cr.validate()) {
                valid = false;
             }
         })
