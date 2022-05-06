@@ -29,10 +29,13 @@ export class HeaderComponent implements OnInit {
             });
     }   
     ngOnInit(): void {
+        this.authService.getUserEmail();
 
         this.authService.loggedInState$.subscribe(state => {
             this.loginState = state;
-            this.userEmail = this.authService.getUserEmail();
+            if (state) {
+                this.userEmail = this.authService.userEmail;
+            }
         });
 
         this.loginState = this.authStorage.getLoggedInState();

@@ -4,4 +4,5 @@ export class CryptoItemModel {
     price: number = 0;
     isActive: boolean = false;
     id: number;
+    histories: Array<{date: string; price: number}> = [];
 }

@@ -1,4 +1,4 @@
-<a class="P-container" [routerLink]="'/details/' + item.id">
+<a class="P-container" (click)="cryptoItemClicked(item.id)">
     <div class="P-crypto_item" [class.active]="item.isActive" (mouseenter)="item.isActive = true" (mouseleave)="item.isActive = false">
         <div class="P-crypto_img d-flex justify-content-center align-items-center">
             <img [src]="item.image">

@@ -6,7 +6,7 @@ export class CriteriaCreateRM extends Validation {
 
     @IsNumber()
     @IsDefined()
-    amount: number;
+    price: number;
 
     @IsNumber()
     @IsDefined()
@@ -16,14 +16,14 @@ export class CriteriaCreateRM extends Validation {
     operation: OperationTypeEnum;
 
     errors = {
-        amount: false,
+        price: false,
         cryptoId: false,
         operation: false
     };
 
     getModel() {
         return {
-            amount: this.amount,
+            price: this.price,
             cryptoId: this.cryptoId,
             operation: this.operation
         }

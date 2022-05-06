@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OperationTypeEnum } from '@app/global/enums/operation-type.enum';
 import { CriteriaCreateRM } from '@app/global/models/criteria-create.model';
 import { DropdownModel } from '@app/global/models/select';
 import { SymptomCrateRM } from '@app/global/models/symptom-create.model';
+import { AuthService } from '@platform/services/auth.service';
 import { CryptoService } from '@platform/services/crypto.service';
 import { SymptomService } from '@platform/services/symptom.service';
 
@@ -15,14 +16,14 @@ import { SymptomService } from '@platform/services/symptom.service';
 
 export class CreateSymptomComponent implements OnInit {
 
-    email: string = 'akaryan9991@gmail.com';
+    email: string = '';
     cryptosList = [];
     operationsList = [{name: '>', value: 1}, {name: '<', value: 2}];
     OperationTypeEnum = OperationTypeEnum;
     symptomCreateRM = new SymptomCrateRM()
 
     constructor(private cryptoService: CryptoService, private symptomSymptom: SymptomService,
-        private activatedRoute: ActivatedRoute) { }
+        private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
     ngOnInit(): void {
         this.cryptoService.getCryptos().subscribe(data => {
@@ -36,11 +37,13 @@ export class CreateSymptomComponent implements OnInit {
         if (cryptoId) {
             this.symptomCreateRM.criterias[0].cryptoId = cryptoId;
         }
+
+        this.email = this.authService.userEmail;
     }
 
     makeAmountNumber(item: CriteriaCreateRM) {
-        if (item.amount) {
-            item.amount = +item.amount;
+        if (item.price) {
+            item.price = +item.price;
         }
     }
 
@@ -57,7 +60,7 @@ export class CreateSymptomComponent implements OnInit {
             return;
         }
         this.symptomSymptom.create(this.symptomCreateRM).subscribe(res => {
-
+            this.router.navigate(['/my-symptoms']);
         })
     }
 }

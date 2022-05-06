@@ -18,11 +18,11 @@
         <div class="P-flex">
             <app-dropdown [list]="cryptosList" [error]="item.errors.cryptoId" [(value)]="item.cryptoId" placeholder="Cryptocurrency" class="P-mr-2"></app-dropdown>
             <app-dropdown [list]="operationsList" [error]="item.errors.operation" [(value)]="item.operation" placeholder="Operation" class="P-mr-2 P-dropdown"></app-dropdown>
-            <input placeholder="Amount in USD" [class.P-error]="item.errors.amount" [(ngModel)]="item.amount" type="number">
+            <input placeholder="Amount in USD" [class.P-error]="item.errors.price" [(ngModel)]="item.price" type="number">
           </div>
       
           <div class="P-flex">
-            <i *ngIf="symptomCreateRM.criterias.length > 1" (click)="deleteCriteria(index)" class="P-icon-delete icon-ic_delete"></i>
+            <i *ngIf="symptomCreateRM.criterias.length > 1" (click)="deleteCriteria(item.id)" class="P-icon-delete icon-ic_delete"></i>
 
             <div class="P-icon-plus" *ngIf="index === 0" (click)="addCriteriaRow()">
               <i class="fontello-icon-plus"></i>

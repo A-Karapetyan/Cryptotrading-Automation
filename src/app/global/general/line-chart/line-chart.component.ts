@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss'],
 })
-export class LineChartComponent {
-  chartType = 'line';
+export class LineChartComponent implements OnInit {
 
+  @Input()
   chartDatasets = [
-    { data: [39402, 39303, 39346, 39354, 39437, 39404, 39467], label: 'BTC' },
+    { data: [], label: '' },
   ];
 
-  chartLabels = ['16-04-2022', '17-04-2022', '18-04-2022', '19-04-2022', '20-04-2022', '21-04-2022', '2022-04-2022'];
+  @Input()
+  chartLabels: Array<string> = [];
+
+  chartType = 'line';
 
   chartColors = [
     {
@@ -26,6 +29,10 @@ export class LineChartComponent {
       borderWidth: 2,
     }
   ];
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   chartOptions: any = {
     responsive: true

@@ -46,6 +46,10 @@ export class AuthService {
     
   }
 
+  getUserEmail() {
+    return this.httpClient.get(`${this.contoller}/GetUserEmail`).subscribe(res => this.userEmail = res);
+  }
+
   registerEmail(email: string): Observable<any> {
     return this.httpClient.post(`${this.contoller}/RegisterEmail`, null, { email: email });
   }
@@ -68,10 +72,6 @@ export class AuthService {
 
   openSignInModal() {
     this.signInModal$.next(true);
-  }
-
-  getUserEmail() {
-    return this.userEmail ? this.userEmail : '';
   }
 
   closeSignInModal() {

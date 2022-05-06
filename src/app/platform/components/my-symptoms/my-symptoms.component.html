@@ -14,31 +14,31 @@
   <div class="P-symptom-row" *ngFor="let item of symptomsList; let index = index">
     <div class="P-symptom-name">
         <div>
-            <span *ngIf="!item.isEditName" style="margin-right: 20px;">{{item.name}}</span>
-            <input *ngIf="item.isEditName" [(ngModel)]="item.name" placeholder="Title" style="margin-right: 20px; font-size: 18px;">
+            <span *ngIf="!item.isEditName" style="margin-right: 20px;">{{item.title}}</span>
+            <input *ngIf="item.isEditName" [(ngModel)]="item.title" [class.P-error]="item?.errors?.title" placeholder="Title" style="margin-right: 20px; font-size: 18px;">
             <i *ngIf="!item.isEditName" class="fontello-icon-pencil" (click)="item.isEditName = true"></i>
-            <i *ngIf="item.isEditName" class="fontello-icon-ok" (click)="item.isEditName = false"></i>
+            <i *ngIf="item.isEditName" class="fontello-icon-ok" (click)="saveSymptomTitle(item)"></i>
         </div>
     
-        <i (click)="deleteSymptom(index)" class="P-icon-delete fontello-icon-cancel"></i>
+        <i (click)="deleteSymptom(item.id)" class="P-icon-delete fontello-icon-cancel"></i>
     </div>
     <div class="P-criteria" *ngFor="let criteria of item.criterias">
       <div *ngIf="!criteria.isEdit" class="P-flex">
         <div class="P-crypto-block">
-          <img *ngIf="criteria.image" [src]="criteria.image" width="20px">
+          <img *ngIf="criteria.crypto.image" [src]="criteria.crypto.image" width="20px">
           <span class="P-mr-1">{{criteria.name}}</span>
-          <span class="P-mr-1">{{OperationTypeEnum[criteria.value]}}</span>
+          <span class="P-mr-1">{{OperationTypeEnum[criteria.operation]}}</span>
           <span>{{criteria.price}}</span>
         </div>
 
       </div>
       <div *ngIf="criteria.isEdit" class="P-flex">
-        <app-dropdown [list]="criteriasList" [(value)]="rowValue" placeholder="Cryptocurrency" class="P-mr-2 P-ml-2 P-dropdown"></app-dropdown>
-        <app-dropdown [list]="operationsList" [(value)]="criteria.value" placeholder="Operation" class="P-mr-2 P-dropdown"></app-dropdown>
-        <input [(ngModel)]="criteria.price" placeholder="Amount in USD">
+        <app-dropdown [list]="cryptosList" [error]="criteria?.errors?.cryptoId" [(value)]="criteria.crypto.id" placeholder="Cryptocurrency" class="P-mr-2 P-ml-2 P-dropdown"></app-dropdown>
+        <app-dropdown [list]="operationsList" [error]="criteria?.errors?.operation" [(value)]="criteria.operation" placeholder="Operation" class="P-mr-2 P-dropdown"></app-dropdown>
+        <input [(ngModel)]="criteria.price" type="number" [class.P-error]="criteria?.errors?.price" placeholder="Amount in USD">
       </div>
       <i *ngIf="!criteria.isEdit" class="fontello-icon-pencil" (click)="criteria.isEdit = true"></i>
-      <i *ngIf="criteria.isEdit" class="fontello-icon-ok" (click)="criteria.isEdit = false"></i>
+      <i *ngIf="criteria.isEdit" class="fontello-icon-ok" (click)="saveCriteriaEdit(criteria)"></i>
 
     </div>
   </div>
