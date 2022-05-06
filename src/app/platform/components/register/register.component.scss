@@ -1,3 +1,9 @@
 .modal-title {
     font-size: 18px !important;
 }
+
+.submit-btn {
+    :disabled {
+        opacity: 0.6;
+    }
+}

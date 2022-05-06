@@ -1,4 +1,4 @@
-<div clickOutside (close)="close()" mdbModal #frame="mdbModal" class="modal fade center" id="frameModalTop" tabindex="-1" role="dialog"
+<div clickOutside (close)="close()" *ngIf="isOpen" mdbModal #frame="mdbModal" class="modal fade center" id="frameModalTop" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -10,23 +10,23 @@
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          <input type="text" id="orangeForm-name" class="form-control" [formControl]="signupFormModalName"
-            mdbInput mdbValidate>
-          <label for="orangeForm-name">Your name</label>
-        </div>
-        <div class="md-form mb-5">
           <input type="email" id="orangeForm-email" class="form-control" [formControl]="signupFormModalEmail"
             mdbInput mdbValidate>
           <label for="orangeForm-email">Your email</label>
         </div>
-        <div class="md-form mb-4">
-          <input type="password" id="orangeForm-pass" class="form-control"
-            [formControl]="signupFormModalPassword" mdbInput mdbValidate>
+        <div class="md-form mb-5">
+          <input type="password" id="orangeForm-pass" (keydown.enter)="register()" class="form-control" [formControl]="signupFormModalPassword"
+            mdbInput mdbValidate>
           <label for="orangeForm-pass">Your password</label>
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button mdbBtn color="dark" class="waves-light btn-rounded" mdbWavesEffect>Sign up</button>
+        <div style="border: none;" class="modal-footer d-flex justify-content-center">
+          <button mdbBtn color="dark" [disabled]="isInvalid()" mdbWavesEffect (click)="register()">Sign up</button>
+        </div>
+        <div>
+          <button mdbBtn color="link" class="waves-light btn-rounded" mdbWavesEffect (click)="openSignIn()">Sign In</button>
+        </div>
       </div>
     </div>
   </div>

@@ -18,9 +18,13 @@
       <!-- Links -->
   
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item">
+        <li>{{userEmail}}</li>
+        <li *ngIf="!loginState" class="nav-item">
             <button type="button" class="btn btn-light btn-rounded" (click)="openLoginModal()">Login</button>
         </li>
+        <li *ngIf="loginState" class="nav-item">
+          <button type="button" class="btn btn-light btn-rounded" (click)="logout()">Log Out</button>
+      </li>
       </ul>
     </links>
     <!-- Collapsible content -->

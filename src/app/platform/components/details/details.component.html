@@ -2,7 +2,7 @@
     <div class="P-profile-container">
       <img [src]="crypto.image" width="100px">
       <h1>{{crypto.name}}</h1>
-      <h1>{{crypto.price.toLocaleString() + ' $'}}</h1>
+      <h1>{{ (crypto.price?.toLocaleString() || 0) + ' $'}}</h1>
       <div>
         <button mdbBtn gradient="peach" mdbWavesEffect [routerLink]="'/create-symptom/' + crypto.id">CREATE SYMPTOM</button>
       </div>

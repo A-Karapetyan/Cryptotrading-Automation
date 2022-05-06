@@ -9,6 +9,8 @@ import { FooterComponent } from './platform/components/footer/footer.component';
 import { GeneralModule } from './global/general/general.module';
 import { LoginComponent } from '@platform/components/login/login.component';
 import { RegisterComponent } from './platform/components/register/register.component';
+import { VerifyComponent } from '@platform/components/verify/verify.component';
+import { ToasterModule } from './global/general/toaster.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { RegisterComponent } from './platform/components/register/register.compo
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    VerifyComponent,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    GeneralModule
+    GeneralModule,
+    ToasterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

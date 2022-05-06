@@ -9,6 +9,7 @@ import { AuthService } from '@platform/services/auth.service';
 export class AppComponent implements OnInit {
   public isOpenLoginState: boolean;
   public isOpenSignUpState: boolean;
+  public isOpenVerifyState: boolean;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -17,6 +18,9 @@ export class AppComponent implements OnInit {
     });
     this.authService.signUpModal$.subscribe((isOpen: boolean) => {
       this.isOpenSignUpState = isOpen;
+    });
+    this.authService.verifyModal$.subscribe((isOpen: boolean) => {
+      this.isOpenVerifyState = isOpen;
     });
   }
 }

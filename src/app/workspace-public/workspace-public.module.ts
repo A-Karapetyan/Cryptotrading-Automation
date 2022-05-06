@@ -10,6 +10,7 @@ import { MySymptomsComponent } from '@platform/components/my-symptoms/my-symptom
 import { FormsModule } from '@angular/forms';
 import { CreateSymptomComponent } from '@platform/components/create-symptom/create-symptom.component';
 import { CryptoService } from '@platform/services/crypto.service';
+import { ToasterService } from '@platform/services/toaster.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,6 @@ import { CryptoService } from '@platform/services/crypto.service';
     GeneralModule,
     FormsModule
   ],
-  providers: [CryptoService]
+  providers: [CryptoService, ToasterService]
 })
 export class WorkspacePublicModule { }

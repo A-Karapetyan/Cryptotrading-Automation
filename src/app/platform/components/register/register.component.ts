@@ -11,11 +11,12 @@ export class RegisterComponent implements AfterViewInit {
   validatingForm: FormGroup;
   @ViewChild('frame') frame: any;
 
+  isOpen: boolean = true;
+
   constructor(private authService: AuthService) {
     this.validatingForm = new FormGroup({
-      signupFormModalName: new FormControl('', Validators.required),
       signupFormModalEmail: new FormControl('', Validators.email),
-      signupFormModalPassword: new FormControl('', Validators.required),
+      signupFormModalPassword: new FormControl('', Validators.minLength(6)),
     });
   }
 
@@ -24,12 +25,42 @@ export class RegisterComponent implements AfterViewInit {
   }
 
   close() {
-    this.frame.hide();
+    this.isOpen = false;
     this.authService.closeSignUpModal();
   }
 
-  get signupFormModalName() {
-    return this.validatingForm.get('signupFormModalName');
+  openSignIn() {
+    this.authService.closeSignUpModal();
+    this.authService.openSignInModal();
+  }
+
+  register() {
+
+    if (this.isInvalid()) {
+      return;
+    }
+
+    const email = this.validatingForm.get('signupFormModalEmail');
+    const pass = this.validatingForm.get('signupFormModalPassword');
+
+    if (!email.errors && !pass.errors) {
+
+      this.authService.registerEmail(email.value).subscribe(id => {
+        this.authService.newUserId = +id;
+        this.authService.savedPassword = pass.value;
+        this.authService.savedEmail = email.value;
+      });
+
+      this.authService.closeSignUpModal();
+      this.authService.openVerifyModal();
+    }
+  }
+
+  isInvalid(): boolean {
+    const email = this.validatingForm.get('signupFormModalEmail');
+    const pass = this.validatingForm.get('signupFormModalPassword');
+
+    return !!email.errors || !!pass.errors || !email.value || !pass.value;
   }
 
   get signupFormModalEmail() {

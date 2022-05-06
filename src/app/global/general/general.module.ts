@@ -17,7 +17,7 @@ import { ClickOutsideDirective } from '../directives/click-outside.directive';
     ItemCryptoComponent,
     LineChartComponent,
     DropdownComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
   ],
   imports: [
     CommonModule,

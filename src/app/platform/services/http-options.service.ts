@@ -36,17 +36,9 @@ export class HttpOptionsService {
 		this.setHeader('Authorization', token ? 'Bearer ' + token : '');
 	}
 
-	public setLanguage(language: number) {
-	  this.setHeader('LanguageId', language.toString());
-  }
-
-  public setDeviceId(deviceId: string): void {
-    this.setHeader('DeviceId', deviceId);
-  }
-
-  public setHeader(name: string, value: string): void {
-    this.defaultOptions.headers = this.defaultOptions.headers?.set(name, value);
-  }
+  	public setHeader(name: string, value: string): void {
+  	  this.defaultOptions.headers = this.defaultOptions.headers?.set(name, value);
+  	}
 
 	private mergeOptions(options: IOptions): void {
 		for (const i in options) {

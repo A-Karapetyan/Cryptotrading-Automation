@@ -11,10 +11,12 @@ import { AuthStorage } from '@platform/storages/auth.storage';
 export class HeaderComponent implements OnInit {
 
     currentRoute: String = '';
+    loginState: boolean = false;
+    userEmail: string = '';
 
     constructor(
         public authStorage: AuthStorage,
-        private authService: AuthService,
+        public authService: AuthService,
         public router: Router,
 
     ) {
@@ -25,8 +27,19 @@ export class HeaderComponent implements OnInit {
                 }
 
             });
-    }
+    }   
     ngOnInit(): void {
+
+        this.authService.loggedInState$.subscribe(state => {
+            this.loginState = state;
+            this.userEmail = this.authService.getUserEmail();
+        });
+
+        this.loginState = this.authStorage.getLoggedInState();
+    }
+
+    logout() {
+        this.authStorage.logout();
     }
 
     openLoginModal() {
