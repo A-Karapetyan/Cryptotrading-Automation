@@ -46,8 +46,8 @@ export class AuthService {
     
   }
 
-  getUserEmail() {
-    return this.httpClient.get(`${this.contoller}/GetUserEmail`).subscribe(res => this.userEmail = res);
+  getUserEmail(): Observable<any> {
+    return this.httpClient.get(`${this.contoller}/GetUserEmail`);
   }
 
   registerEmail(email: string): Observable<any> {

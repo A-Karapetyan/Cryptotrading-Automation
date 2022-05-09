@@ -8,6 +8,8 @@ import { CryptoService } from '@platform/services/crypto.service';
 })
 export class HomeComponent implements OnInit {
     public data = [];
+    public filteredData = [];
+    public searchText: string = '';
     private cryptoService: CryptoService;
 
     constructor(cryptoService: CryptoService) {
@@ -17,7 +19,11 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         this.cryptoService.getCryptos().subscribe(data => {
             this.data = data;
+            this.filteredData = data;
         });
     }
 
+    search(text: string) {
+        this.filteredData = this.data.filter(el => el.name.toUpperCase().includes(text.toUpperCase()))
+    }
 }

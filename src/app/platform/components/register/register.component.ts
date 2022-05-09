@@ -16,7 +16,7 @@ export class RegisterComponent implements AfterViewInit {
   constructor(private authService: AuthService) {
     this.validatingForm = new FormGroup({
       signupFormModalEmail: new FormControl('', Validators.email),
-      signupFormModalPassword: new FormControl('', Validators.minLength(6)),
+      signupFormModalPassword: new FormControl('', Validators.required),
     });
   }
 

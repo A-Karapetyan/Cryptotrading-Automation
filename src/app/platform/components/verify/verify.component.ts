@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '@platform/services/auth.service';
+import { AuthStorage } from '@platform/storages/auth.storage';
 
 @Component({
   selector: 'app-verify',
@@ -11,7 +12,7 @@ export class VerifyComponent implements AfterViewInit {
   @ViewChild('frame') frame: any;
   validatingForm: FormGroup;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private authStorage: AuthStorage) {
     this.validatingForm = new FormGroup({
       verifyEmailCode: new FormControl('', Validators.minLength(6)),
     });
@@ -33,9 +34,10 @@ export class VerifyComponent implements AfterViewInit {
     return this.authService.verifyEmail(code).subscribe((res) => {
 
       if (res === true) {
-        this.authService.registerUser().subscribe(token => {
+        this.authService.registerUser().subscribe(res => {
+          this.authStorage.saveTokenInStorage(res.token);
+          this.authService.setUserEmail(res.email);
           location.reload();
-          this.close();
         });
       }
     });

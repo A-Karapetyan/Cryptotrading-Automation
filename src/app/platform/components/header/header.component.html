@@ -18,7 +18,7 @@
       <!-- Links -->
   
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li>{{userEmail}}</li>
+        <span *ngIf="userEmail" class="P-user-email">{{userEmail}}</span>
         <li *ngIf="!loginState" class="nav-item">
             <button type="button" class="btn btn-light btn-rounded" (click)="openLoginModal()">Login</button>
         </li>

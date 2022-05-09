@@ -31,7 +31,6 @@ export class LineChartComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   chartOptions: any = {
